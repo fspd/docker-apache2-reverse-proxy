@@ -1,6 +1,4 @@
-FROM debian:jessie
-
-MAINTAINER Jose Manuel Ferrer Mosteiro <jmferrer@paradigmadigital.com>
+FROM debian:trixie
 
 ENV DEBIAN_FRONTEND noninteractive
 
