@@ -6,7 +6,7 @@ RUN apt-get update
 
 RUN apt-get -y install ansible python3-apt git
 
-RUN git clone https://github.com/jmferrer/ansible-apache2-reverse-proxy.git /etc/ansible/
+RUN git clone https://github.com/fspd/ansible-apache2-reverse-proxy.git /etc/ansible/
 
 RUN ansible-playbook -i "localhost," -c local /etc/ansible/site.yml
 
