@@ -4,13 +4,13 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 
-RUN apt-get -y install ansible python3-apt
+RUN apt-get -y install ansible python3-apt git
 
-COPY ansible/* /etc/ansible/
+RUN git clone https://github.com/jmferrer/ansible-apache2-reverse-proxy.git /etc/ansible/
 
 RUN ansible-playbook -i "localhost," -c local /etc/ansible/site.yml
 
-RUN apt-get -y remove ansible python-apt;apt-get -y autoremove
+RUN apt-get -y remove ansible python3-apt git;apt-get -y autoremove
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
